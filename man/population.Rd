@@ -25,3 +25,6 @@ population(geography = "us")
 population(geography = "state")
 population(geography = "county")
 }
+\seealso{
+Retrieve U.S. boundaries with \code{\link[ussf:boundaries]{ussf::boundaries()}}
+}

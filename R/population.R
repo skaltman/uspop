@@ -29,6 +29,8 @@ create_fips <- function(data, geography) {
 #' @param geography Either "us", "state", or "county".
 #'
 #' @return Tibble with four columns: `region`, `fips`, `year`, and `pop`.
+#'
+#' @seealso Retrieve U.S. boundaries with [ussf::boundaries()]
 #' @export
 #'
 #' @examples
