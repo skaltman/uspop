@@ -1,0 +1,27 @@
+Package: uspop
+Title: Historical U.S. population estimates
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Sara",
+           family = "Altman",
+           role = c("aut", "cre"),
+           email = "sarakaialtman@gmail.com")
+Description: Retrieve U.S. population estimates from the Census Bureau's Population Estimates API. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    magrittr,
+    stringr,
+    httr,
+    jsonlite,
+    tibble,
+    dplyr,
+    rlang,
+    testthat
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

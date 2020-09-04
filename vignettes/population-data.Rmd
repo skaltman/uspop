@@ -1,0 +1,55 @@
+---
+title: "Working with U.S. population data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{population-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tidyverse)
+library(uspop)
+```
+
+## Population Estimates API
+
+The Census Bureau publishes a wide variety of APIs, including many that supply population data. Both the decennial census and American Community Survey (ACS) include population data, but the Population Estimates APIs:
+
+* Are more accurate than the ACS estimates.
+* Provide yearly data, as opposed to data every ten years like the decennial census. 
+
+`uspop::population()` uses the Vintage 2019 Population Estimates API to pull accurate population estimates for 2010-2019.
+
+## Geographies
+
+`uspop::population()` currently only supports three geographies: 
+
+* `"us"`: The population of the entire U.S.
+* `"state"`: Population by state, for all states.
+* `"county"`: Population by county, for all counties. 
+
+`population()` currenlty does not support limiting the data to a particular set of states or counties. However, you can filter after calling `population()`. For example, if you only want data for the state of Montana:
+
+```{r}
+population("state") %>% 
+  filter(region == "Montana")
+```
+
+Or, if you want the counties from Montana:
+```{r}
+# 30 is Montana's state FIPS
+population("county") %>% 
+  filter(str_detect(fips, "^30"))
+```
+
+## Working directly with the APIs
+
+If you'd like to work directly with the Census Bureau's APIs, [this chapter](https://dcl-wrangle.stanford.edu/census.html) has more information.
