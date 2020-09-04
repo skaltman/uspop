@@ -7,6 +7,8 @@
 
 [![Codecov test
 coverage](https://codecov.io/gh/skaltman/uspop/branch/master/graph/badge.svg)](https://codecov.io/gh/skaltman/uspop?branch=master)
+[![R build
+status](https://github.com/skaltman/uspop/workflows/R-CMD-check/badge.svg)](https://github.com/skaltman/uspop/actions)
 <!-- badges: end -->
 
 uspop makes it easy to retrieve historical U.S. population estimates for
